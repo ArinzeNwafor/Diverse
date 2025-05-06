@@ -11,6 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   </head>
   <body>
+    <!-- Waiting List Modal -->
+    <div class="waiting-list-modal">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="modal-logo">
+          <img src="public/images/ride-archive-logo.png" alt="Ride Archive Logo" />
+        </div>
+        <h3 class="modal-title">Join Our Waiting List</h3>
+        <p class="modal-description">Be the first to know when we launch. Get exclusive access to our premium car collection.</p>
+        <form class="waiting-list-form" id="waitingListForm">
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Enter your email address" required />
+            <button type="submit" class="submit-btn">Join Now</button>
+          </div>
+          <div class="form-message"></div>
+        </form>
+        <p class="privacy-note">We respect your privacy and will never share your information.</p>
+      </div>
+    </div>
+
     <header class="main-header">
       <nav class="main-nav">
         <ul class="nav-links">
@@ -98,53 +123,45 @@
                 <div class="menu-column">
                     <h3 class="menu-column-title">DIVERSE</h3>
                 </div>
-            </div>
-            
-            <div class="menu-social">
-                <a href="#" class="menu-social-icon" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="#" class="menu-social-icon" aria-label="Twitter">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                    </svg>
-                </a>
-                <a href="#" class="menu-social-icon" aria-label="Pinterest">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z"></path>
-                        <path d="M12 2v2"></path>
-                        <path d="M12 20v2"></path>
-                        <path d="m4.93 4.93 1.41 1.41"></path>
-                        <path d="m17.66 17.66 1.41 1.41"></path>
-                        <path d="M2 12h2"></path>
-                        <path d="M20 12h2"></path>
-                        <path d="m6.34 17.66-1.41 1.41"></path>
-                        <path d="m19.07 4.93-1.41 1.41"></path>
-                    </svg>
-                </a>
-                <a href="#" class="menu-social-icon" aria-label="YouTube">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                    </svg>
-                </a>
-                <a href="#" class="menu-social-icon" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
+                
+                <div class="menu-social">
+                    <a href="#" class="menu-social-icon" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-social-icon" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">
+                            <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-social-icon" aria-label="Pinterest">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">
+                            <path d="M15,3C8.373,3,3,8.373,3,15c0,5.084,3.163,9.426,7.627,11.174c-0.105-0.949-0.2-2.406,0.042-3.442 c0.218-0.936,1.407-5.965,1.407-5.965s-0.359-0.719-0.359-1.781c0-1.669,0.967-2.914,2.171-2.914c1.024,0,1.518,0.769,1.518,1.69 c0,1.03-0.655,2.569-0.994,3.995c-0.283,1.195,0.599,2.169,1.777,2.169c2.133,0,3.772-2.249,3.772-5.495 c0-2.873-2.064-4.882-5.012-4.882c-3.414,0-5.418,2.561-5.418,5.208c0,1.031,0.397,2.137,0.893,2.739 c0.098,0.119,0.112,0.223,0.083,0.344c-0.091,0.379-0.293,1.194-0.333,1.361c-0.052,0.22-0.174,0.266-0.401,0.16 c-1.499-0.698-2.436-2.889-2.436-4.649c0-3.785,2.75-7.262,7.929-7.262c4.163,0,7.398,2.966,7.398,6.931 c0,4.136-2.608,7.464-6.227,7.464c-1.216,0-2.359-0.632-2.75-1.378c0,0-0.602,2.291-0.748,2.853 c-0.271,1.042-1.002,2.349-1.492,3.146C12.57,26.812,13.763,27,15,27c6.627,0,12-5.373,12-12S21.627,3,15,3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-social-icon" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="#" class="menu-social-icon" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
     <section class="hero">
-      <div class="hero-content">
+      <div class="hero-content animate-on-scroll fade-in-up">
         <h1 class="hero-title">Love the thrill<br />of the wheel?</h1>
         <a href="#models" class="cta-button">Get into it</a>
       </div>
@@ -152,13 +169,13 @@
 
     <section id="models" class="models-section">
       <div class="models-content">
-        <h2 class="section-title">OUR MODELS</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title animate-on-scroll fade-in-left">OUR MODELS</h2>
+        <p class="section-subtitle animate-on-scroll fade-in-left">
           Explore a variety of cars and take a look at what interests you.
         </p>
 
         <div class="car-showcase">
-          <div class="car-card">
+          <div class="car-card animate-on-scroll fade-in-up">
             <img src="rolls-royce.jpg" alt="Rolls Royce" class="car-image" />
             <div class="car-info">
               <h3 class="car-name">Rolls Royce</h3>
@@ -168,7 +185,7 @@
               </div>
             </div>
           </div>
-          <div class="car-card">
+          <div class="car-card animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
             <img src="F-one.jpg" alt="Model F1 car" class="car-image" />
             <div class="car-info">
               <h3 class="car-name"></h3>
@@ -271,7 +288,7 @@
     <div class="news-container">
         <div class="news-grid">
             <!-- News Item 1 -->
-            <div class="news-item">
+            <div class="news-item animate-on-scroll fade-in-up">
                 <div class="news-image">
                     <img src="diverse-labs.jpg" alt="Diverse Labs">
                 </div>
@@ -281,7 +298,7 @@
             </div>
             
             <!-- News Item 2 -->
-            <div class="news-item">
+            <div class="news-item animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
                 <div class="news-image">
                     <img src="rr-event.jpg" alt="Rolls-Royce Event">
                 </div>
@@ -291,7 +308,7 @@
             </div>
             
             <!-- News Item 3 -->
-            <div class="news-item">
+            <div class="news-item animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
                 <div class="news-image">
                     <img src="windows-update.jpg" alt="Windows 11 Update">
                 </div>
@@ -306,7 +323,7 @@
  <!-- Footer Section -->
  <footer class="footer">
     <div class="footer-container">
-        <div class="footer-column">
+        <div class="footer-column animate-on-scroll fade-in-up">
             <h4 class="footer-title">MODELS</h4>
             <ul class="footer-links">
                 <li><a href="#">Lamborghini</a></li>
@@ -317,7 +334,7 @@
             </ul>
         </div>
         
-        <div class="footer-column">
+        <div class="footer-column animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
             <h4 class="footer-title">SOCIAL MEDIA</h4>
             <div class="social-icons">
                 <a href="#" class="social-icon" aria-label="Instagram">
@@ -328,25 +345,17 @@
                     </svg>
                 </a>
                 <a href="#" class="social-icon" aria-label="Twitter">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">
+                        <path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"></path>
+                        </svg>
                 </a>
                 <a href="#" class="social-icon" aria-label="Pinterest">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M8 12a4 4 0 1 0 8 0 4 4 0 0 0-8 0z"></path>
-                        <path d="M12 2v2"></path>
-                        <path d="M12 20v2"></path>
-                        <path d="m4.93 4.93 1.41 1.41"></path>
-                        <path d="m17.66 17.66 1.41 1.41"></path>
-                        <path d="M2 12h2"></path>
-                        <path d="M20 12h2"></path>
-                        <path d="m6.34 17.66-1.41 1.41"></path>
-                        <path d="m19.07 4.93-1.41 1.41"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">
+                        <path d="M15,3C8.373,3,3,8.373,3,15c0,5.084,3.163,9.426,7.627,11.174c-0.105-0.949-0.2-2.406,0.042-3.442 c0.218-0.936,1.407-5.965,1.407-5.965s-0.359-0.719-0.359-1.781c0-1.669,0.967-2.914,2.171-2.914c1.024,0,1.518,0.769,1.518,1.69 c0,1.03-0.655,2.569-0.994,3.995c-0.283,1.195,0.599,2.169,1.777,2.169c2.133,0,3.772-2.249,3.772-5.495 c0-2.873-2.064-4.882-5.012-4.882c-3.414,0-5.418,2.561-5.418,5.208c0,1.031,0.397,2.137,0.893,2.739 c0.098,0.119,0.112,0.223,0.083,0.344c-0.091,0.379-0.293,1.194-0.333,1.361c-0.052,0.22-0.174,0.266-0.401,0.16 c-1.499-0.698-2.436-2.889-2.436-4.649c0-3.785,2.75-7.262,7.929-7.262c4.163,0,7.398,2.966,7.398,6.931 c0,4.136-2.608,7.464-6.227,7.464c-1.216,0-2.359-0.632-2.75-1.378c0,0-0.602,2.291-0.748,2.853 c-0.271,1.042-1.002,2.349-1.492,3.146C12.57,26.812,13.763,27,15,27c6.627,0,12-5.373,12-12S21.627,3,15,3z"></path>
                     </svg>
                 </a>
                 <a href="#" class="social-icon" aria-label="YouTube">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                         <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
                     </svg>
@@ -361,7 +370,7 @@
             </div>
         </div>
         
-        <div class="footer-column">
+        <div class="footer-column animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
             <h4 class="footer-title">SERVICES</h4>
             <ul class="footer-links">
                 <li><a href="#">Newsroom</a></li>
@@ -374,6 +383,13 @@
         <p>©copyright Diverse Labs 2025</p>
     </div>
 </footer>
+
+<!-- Scroll to top button -->
+<button class="scroll-to-top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
 
 <script src="script.js"></script>
 </body>
