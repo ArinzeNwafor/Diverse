@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formMessage = document.querySelector(".form-message")
 
   // Show modal after 5 seconds
-  const modalTimeout = setTimeout(() => {
+  setTimeout(() => {
     waitingListModal.classList.add("active")
     document.body.style.overflow = "hidden" // Prevent scrolling when modal is open
   }, 5000)
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   })
 
-  // Form submission with actual API call
+  // Form submission
   waitingListForm.addEventListener("submit", (e) => {
     e.preventDefault()
 
@@ -349,55 +349,21 @@ document.addEventListener("DOMContentLoaded", () => {
       return
     }
 
-    // Show loading state
+    // Simulate form submission (replace with actual API call)
     formMessage.textContent = "Submitting..."
     formMessage.className = "form-message"
 
-    // Actually send the data to our API endpoint
-    fetch("/api/waiting-list", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok")
-        }
-        return response.json()
-      })
-      .then((data) => {
-        if (data.alreadyExists) {
-          formMessage.textContent = data.message
-          formMessage.className = "form-message success"
-        } else if (data.success) {
-          formMessage.textContent = "Thank you! You've been added to our waiting list."
-          formMessage.className = "form-message success"
-          emailInput.value = ""
+    // Simulate API call with timeout
+    setTimeout(() => {
+      formMessage.textContent = "Thank you! You've been added to our waiting list."
+      formMessage.className = "form-message success"
+      emailInput.value = ""
 
-          // Store in localStorage that user has signed up
-          localStorage.setItem("waitingListSignup", "true")
-
-          // Close modal after successful submission (optional)
-          setTimeout(() => {
-            waitingListModal.classList.remove("active")
-            document.body.style.overflow = "" // Re-enable scrolling
-          }, 3000)
-        } else {
-          throw new Error(data.message || "Unknown error occurred")
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error)
-        formMessage.textContent = "There was an error. Please try again."
-        formMessage.className = "form-message error"
-      })
+      // Close modal after successful submission (optional)
+      setTimeout(() => {
+        waitingListModal.classList.remove("active")
+        document.body.style.overflow = "" // Re-enable scrolling
+      }, 3000)
+    }, 1500)
   })
-
-  // Check if user has already signed up (don't show modal again)
-  if (localStorage.getItem("waitingListSignup") === "true") {
-    // Don't show the modal if user already signed up
-    clearTimeout(modalTimeout)
-  }
 })

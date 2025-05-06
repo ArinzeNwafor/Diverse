@@ -104,11 +104,11 @@
 .form-group .submit-btn {
   padding: 0.8rem 1.5rem;
   background-color: white;
-  color: rgb(22, 22, 22);
+  color: black;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
 
