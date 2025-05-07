@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Diverse - Love the thrill of the wheel?</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,6 +37,20 @@
       </div>
     </div>
 
+    <!-- Search Modal -->
+    <div class="search-modal">
+      <button class="close-search" aria-label="Close search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search for models, events, or news..." autofocus>
+        <p class="search-hint">Press Enter to search or ESC to close</p>
+      </div>
+    </div>
+
     <header class="main-header">
       <nav class="main-nav">
         <ul class="nav-links">
@@ -43,7 +58,7 @@
           <li><a href="#" class="nav-link">EXPERIENCE</a></li>
         </ul>
         <div class="nav-icons">
-          <a href="#" class="icon-link search-icon">
+          <a href="#" class="icon-link search-icon" id="search-toggle">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -92,6 +107,10 @@
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
         </button>
+        
+        <div class="menu-logo">
+          <img src="public/images/ride-archive-logo.png" alt="Ride Archive Logo">
+        </div>
         
         <div class="menu-content">
             <div class="menu-main-nav">
@@ -176,7 +195,7 @@
 
         <div class="car-showcase">
           <div class="car-card animate-on-scroll fade-in-up">
-            <img src="rolls-royce.jpg" alt="Rolls Royce" class="car-image" />
+            <img src="public/images/rolls-royce.jpg" alt="Rolls Royce" class="car-image" />
             <div class="car-info">
               <h3 class="car-name">Rolls Royce</h3>
               <div class="car-buttons">
@@ -186,7 +205,7 @@
             </div>
           </div>
           <div class="car-card animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
-            <img src="F-one.jpg" alt="Model F1 car" class="car-image" />
+            <img src="public/images/F-one.jpg" alt="Model F1 car" class="car-image" />
             <div class="car-info">
               <h3 class="car-name"></h3>
               <div class="car-buttons">
@@ -207,7 +226,7 @@
             <!-- Card 1 -->
             <div class="card-item active" data-index="0">
                 <div class="card-image">
-                    <img src="concept-car1.jpg" alt="Concept Car">
+                    <img src="public/images/concept-car1.jpg" alt="Concept Car">
                 </div>
                 <div class="card-content">
                     <p>Explore a variety of cars and take<br>a look at what interests you.</p>
@@ -218,7 +237,7 @@
             <!-- Card 2 -->
             <div class="card-item" data-index="1">
                 <div class="card-image">
-                    <img src="concept-car2.jpg" alt="Concept Car">
+                    <img src="public/images/concept-car2.jpg" alt="Concept Car">
                 </div>
                 <div class="card-content">
                     <p>Explore a variety of cars and take<br>a look at what interests you.</p>
@@ -229,7 +248,7 @@
             <!-- Card 3 -->
             <div class="card-item" data-index="2">
                 <div class="card-image">
-                    <img src="scenic-road.jpg" alt="Scenic Road">
+                    <img src="public/images/scenic-road.jpg" alt="Scenic Road">
                 </div>
                 <div class="card-content">
                     <p>Explore a variety of cars and take<br>a look at what interests you.</p>
@@ -240,7 +259,7 @@
             <!-- Card 4 -->
             <div class="card-item" data-index="3">
                 <div class="card-image">
-                    <img src="luxury-interior.jpg" alt="Luxury Interior">
+                    <img src="public/images/luxury-interior.jpg" alt="Luxury Interior">
                 </div>
                 <div class="card-content">
                     <p>Explore a variety of cars and take<br>a look at what interests you.</p>
@@ -251,7 +270,7 @@
             <!-- Card 5 -->
             <div class="card-item" data-index="4">
                 <div class="card-image">
-                    <img src="concept-car3.jpg" alt="Concept Car">
+                    <img src="public/images/concept-car3.jpg" alt="Concept Car">
                 </div>
                 <div class="card-content">
                     <p>Explore a variety of cars and take<br>a look at what interests you.</p>
@@ -262,7 +281,7 @@
             <!-- Card 6 -->
             <div class="card-item" data-index="5">
                 <div class="card-image">
-                    <img src="mountain-drive.jpg" alt="Mountain Drive">
+                    <img src="public/images/mountain-drive.jpg" alt="Mountain Drive">
                 </div>
                 <div class="card-content">
                     <p>Explore a variety of cars and take<br>a look at what interests you.</p>
@@ -290,7 +309,7 @@
             <!-- News Item 1 -->
             <div class="news-item animate-on-scroll fade-in-up">
                 <div class="news-image">
-                    <img src="diverse-labs.jpg" alt="Diverse Labs">
+                    <img src="public/images/diverse-labs.jpg" alt="Diverse Labs">
                 </div>
                 <h3 class="news-title">DIVERSE LABS LAUNCH</h3>
                 <p class="news-description">The diverse labs are getting ready to step into the financial market</p>
@@ -300,7 +319,7 @@
             <!-- News Item 2 -->
             <div class="news-item animate-on-scroll fade-in-up" style="animation-delay: 0.2s;">
                 <div class="news-image">
-                    <img src="rr-event.jpg" alt="Rolls-Royce Event">
+                    <img src="public/images/rr-event.jpg" alt="Rolls-Royce Event">
                 </div>
                 <h3 class="news-title">2025 R-R EVENT</h3>
                 <p class="news-description">Rolls-Royce are creating a new automobile that will be revealed in event 2025</p>
@@ -310,7 +329,7 @@
             <!-- News Item 3 -->
             <div class="news-item animate-on-scroll fade-in-up" style="animation-delay: 0.4s;">
                 <div class="news-image">
-                    <img src="windows-update.jpg" alt="Windows 11 Update">
+                    <img src="public/images/windows-update.jpg" alt="Windows 11 Update">
                 </div>
                 <h3 class="news-title">WINDOWS 11 UPDATE</h3>
                 <p class="news-description">The demo for windows 11 has been working on is finally ready for launch</p>
@@ -323,6 +342,9 @@
  <!-- Footer Section -->
  <footer class="footer">
     <div class="footer-container">
+      <div class="footer-logo">
+        <img src="public/images/ride-archive-logo.png" alt="Ride Archive Logo">
+      </div>
         <div class="footer-column animate-on-scroll fade-in-up">
             <h4 class="footer-title">MODELS</h4>
             <ul class="footer-links">

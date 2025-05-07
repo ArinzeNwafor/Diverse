@@ -366,4 +366,76 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 3000)
     }, 1500)
   })
+
+  // Add search functionality
+  const searchToggle = document.getElementById("search-toggle")
+  const searchModal = document.querySelector(".search-modal")
+  const closeSearchBtn = document.querySelector(".close-search")
+  const searchInput = document.querySelector(".search-input")
+
+  // Open search modal when search icon is clicked
+  searchToggle.addEventListener("click", (e) => {
+    e.preventDefault()
+    searchModal.classList.add("active")
+    document.body.style.overflow = "hidden" // Prevent scrolling
+    setTimeout(() => {
+      searchInput.focus() // Focus the input after modal is visible
+    }, 100)
+  })
+
+  // Close search modal when close button is clicked
+  closeSearchBtn.addEventListener("click", () => {
+    searchModal.classList.remove("active")
+    document.body.style.overflow = "" // Re-enable scrolling
+  })
+
+  // Close search modal when clicking outside the search container
+  searchModal.addEventListener("click", (e) => {
+    if (e.target === searchModal) {
+      searchModal.classList.remove("active")
+      document.body.style.overflow = "" // Re-enable scrolling
+    }
+  })
+
+  // Search form submission
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault()
+      const searchTerm = searchInput.value.trim()
+      if (searchTerm) {
+        // Here you would normally redirect to search results page or filter content
+        // For demo purposes, we'll just show an alert
+        alert(`Searching for: ${searchTerm}`)
+        searchModal.classList.remove("active")
+        document.body.style.overflow = "" // Re-enable scrolling
+      }
+    }
+  })
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") {
+      prevCard()
+    } else if (e.key === "ArrowRight") {
+      nextCard()
+    } else if (e.key === "Escape") {
+      // Close modal on ESC key
+      if (menuModal.classList.contains("active")) {
+        menuModal.classList.remove("active")
+        menuToggle.classList.remove("active")
+        document.body.style.overflow = ""
+      }
+
+      // Close waiting list modal on ESC key
+      if (waitingListModal.classList.contains("active")) {
+        waitingListModal.classList.remove("active")
+        document.body.style.overflow = ""
+      }
+
+      // Close search modal on ESC key
+      if (searchModal.classList.contains("active")) {
+        searchModal.classList.remove("active")
+        document.body.style.overflow = ""
+      }
+    }
+  })
 })
